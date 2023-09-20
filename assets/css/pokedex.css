@@ -145,8 +145,13 @@
   border-radius: 1rem;
   color: #fff;
   padding: 0.25rem 0.5rem;
-  font-size: .625rem;
+  font-size: 1rem;
   margin: .25rem 0;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #4c59c2;
 }
 
 
