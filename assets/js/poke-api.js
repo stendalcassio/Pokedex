@@ -32,3 +32,16 @@ pokeApi.getPokemons = (offset = 0, limit = 6) => {
     .then((detailRequests) => Promise.all(detailRequests))
     .then((pokemonsDetails) => pokemonsDetails);
 };
+
+pokeApi.getPokemonsInfo = (pokemonId) => {
+  const url = `https://pokeapi.co/api/v2/pokemon/${pokemonId}`;
+
+  return fetch(url)
+    .then((response) => response.json())
+    .then((jsonBody) => jsonBody.results)
+    .then((pokemons) => pokemons.map(pokeApi.getPokemonDetail))
+    .then((detailRequests) => Promise.all(detailRequests))
+    .then((pokemonsDetails) => pokemonsDetails);
+};
+
+
